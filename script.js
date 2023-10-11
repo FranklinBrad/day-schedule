@@ -1,10 +1,16 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-
+var saveBtn = document.querySelector(".btn saveBtn col-2 col-md-1")
+currentTimer = setInterval(function () {
+  var currDay = dayjs().format('MMM D, YYYY, hh:mm:ss a')
+  $('#this-day').text(currDay);
+  }, 1000);
 
 $(function () {
- 
+  saveBtn.addEventListener("click", function(event){
+
+  })
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -25,7 +31,7 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
   currentTimer = setInterval(function () {
     var currDay = dayjs().format('MMM D, YYYY, hh:mm:ss a')
-    $('.this-day').text(currDay);
+    $('#this-day').text(currDay);
     console.log(currDay)
     }, 1000);
 });
